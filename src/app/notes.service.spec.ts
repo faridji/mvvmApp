@@ -4,6 +4,7 @@ import { NotesService } from './notes.service';
 
 describe('NotesService', () => {
   let service: NotesService;
+
   beforeEach(() => {
     service = new NotesService();
     TestBed.configureTestingModule({})
@@ -12,9 +13,5 @@ describe('NotesService', () => {
   it('should be created', () => {
     const service: NotesService = TestBed.get(NotesService);
     expect(service).toBeTruthy();
-  });
-
-  it('#getNote should return integer value', () => {
-    expect(service.getNotes()).toBe(1);
   });
 });

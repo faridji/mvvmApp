@@ -21,7 +21,6 @@ export class NotesService {
   private notesSubject = new BehaviorSubject<NoteInfo[]>([]);
 
   constructor() {
-    console.log('I am here');
     this.notes = JSON.parse(localStorage.getItem('notes')) || [];
     for (const note of this.notes) {
       if (note.id >= this.nextId) this.nextId = note.id+1;
@@ -38,10 +37,6 @@ export class NotesService {
     this.notes.push(note);
     this.update();
     return note;
-  }
-
-  getNotes(): number {
-    return 1;
   }
 
   getNote(id: number): Note {
